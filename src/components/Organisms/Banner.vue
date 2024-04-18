@@ -60,6 +60,17 @@ export default {
       width: 100vw;
       height: 100%;
     }
+    .swiper-button-prev {
+      background-image: url("@/assets/images/icons/back.png");
+      width: 40px;
+      background-size: 100%;
+    }
+
+    .swiper-button-next {
+      background-image: url("@/assets/images/icons/next.png");
+      width: 40px;
+      background-size: 100%;
+    }
   }
 }
 </style>

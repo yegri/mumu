@@ -18,6 +18,8 @@ export default {
     return {
       nowScrollY: 0,
       isScrollDown: false,
+      nav: "",
+      navTop: 0,
     };
   },
 
@@ -25,7 +27,7 @@ export default {
     windowScrollY() {
       this.nowScrollY = window.scrollY;
 
-      if (this.nowScrollY > 200) {
+      if (this.nowScrollY > 600) {
         this.isScrollDown = true;
       } else {
         this.isScrollDown = false;
@@ -50,6 +52,7 @@ export default {
   border-top: 1px solid #222222;
   border-bottom: 1px solid #222222;
   margin-bottom: 3rem;
+  transition: all 0.5s;
 
   ul {
     display: flex;
@@ -67,13 +70,13 @@ export default {
 }
 
 .categoryTop {
-  position: fixed;
-  top: 120px;
-  width: 100%;
-  background-color: #000;
-  padding: 1rem 2rem;
+  position: sticky;
+  top: 130px;
+  background-color: rgba(0, 0, 0, 0.9);
   border-top: 1px solid #fff;
   z-index: 1000;
+  transition: all 0.5s;
+  transform: translateY(-15px);
 
   ul {
     li {
