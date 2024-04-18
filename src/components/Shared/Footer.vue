@@ -29,17 +29,11 @@
     </section>
 
     <p class="copy">COPYRIGHT (C) MUSINSA ALL RIGHTS RESERVED.</p>
-
-    <!-- Top 버튼 -->
-    <ScrollTopBtn />
   </footer>
 </template>
 
 <script>
-import ScrollTopBtn from "@/components/Atoms/ScrollTopBtn";
-
 export default {
-  components: { ScrollTopBtn },
   data() {
     return {};
   },

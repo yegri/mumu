@@ -1,5 +1,5 @@
 <template>
-  <div @click="goTop" class="scrollTop">
+  <div @click="goTop" class="scrollTop" v-show="isScrollDown">
     <img
       src="@/assets/images/icons/up-arrow.png"
       alt="top버튼"
@@ -10,21 +10,29 @@
 
 <script>
 export default {
+  props: ["parentHeight"],
+
   data() {
     return {
-      scrolled: false,
       nowScrollY: 0,
       setHeight: 100,
       nowHeight: 0,
+      isScrollDown: false, // v-show를 통해 맨위로 버튼을 등장시키는 변수
     };
   },
 
   methods: {
     goTop() {
-      window.scrollTop(0, 0);
+      window.scrollTo({ top: 0, behavior: "smooth" });
     },
     windowScrollY() {
       this.nowScrollY = window.scrollY;
+
+      if (this.nowScrollY > 200) {
+        this.isScrollDown = true;
+      } else {
+        this.isScrollDown = false;
+      }
     },
   },
 
@@ -32,6 +40,7 @@ export default {
     window.addEventListener("scroll", this.windowScrollY);
     this.windowScrollY();
   },
+
   watch: {
     nowScrollY: {
       handler() {
