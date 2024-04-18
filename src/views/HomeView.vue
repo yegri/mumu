@@ -3,12 +3,14 @@
     <Header />
     <MainBanner />
 
-    <Category :parentHeight="parentHeight" />
+    <!-- 카테고리 -->
+    <Category />
+
     <MainList />
     <Footer />
 
     <!-- Top 버튼 -->
-    <ScrollTopBtn :parentHeight="parentHeight" />
+    <ScrollTopBtn />
     <Nav />
   </div>
 </template>
@@ -34,32 +36,7 @@ export default {
     Category,
   },
   data() {
-    return {
-      nowScrollY: 0,
-      parentHeight: 0,
-    };
-  },
-  async created() {
-    window.addEventListener("scroll", this.windowScrollY);
-  },
-
-  updated() {
-    // 화면에 추가된 후 동작하도록
-    this.$nextTick(() => {
-      this.parentHeight = this.$refs.parent.clientHeight;
-    });
-  },
-
-  methods: {
-    windowScrollY() {
-      let scroll = window.scrollY || window.pageYOffset;
-      sessionStorage.setItem("nowScroll", scroll);
-      this.nowScrollY = window.scrollY;
-    },
-  },
-
-  beforeDestroy() {
-    window.removeEventListener("scroll", this.windowScrollY);
+    return {};
   },
 };
 </script>

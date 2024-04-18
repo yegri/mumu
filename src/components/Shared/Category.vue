@@ -1,4 +1,5 @@
 <template>
+  <!-- isScrollDown이 true일 때 categoryTop 클래스 적용 -->
   <nav class="categoryWrap" :class="{ categoryTop: isScrollDown }">
     <ul>
       <li><router-link to="/">아우터</router-link></li>
@@ -13,12 +14,9 @@
 <script>
 export default {
   name: "Category",
-  props: ["parentHeight"],
   data() {
     return {
       nowScrollY: 0,
-      setHeight: 100,
-      nowHeight: 0,
       isScrollDown: false,
     };
   },
@@ -32,8 +30,6 @@ export default {
       } else {
         this.isScrollDown = false;
       }
-
-      console.log(this.nowScrollY);
     },
   },
 
@@ -42,23 +38,6 @@ export default {
     this.windowScrollY();
   },
 
-  watch: {
-    nowScrollY: {
-      handler() {
-        this.scrolled = this.nowScrollY >= this.nowHeight;
-      },
-    },
-    parentHeight: {
-      handler() {
-        this.nowHeight =
-          this.parentHeight - window.innerHeight <= this.setHeight
-            ? 0
-            : this.setHeight;
-
-        this.scrolled = this.nowScrollY >= this.nowHeight;
-      },
-    },
-  },
   beforeDestroy() {
     window.addEventListener("scroll", this.windowScrollY);
   },
@@ -67,7 +46,6 @@ export default {
 
 <style lang="scss" scoped>
 .categoryWrap {
-  position: static;
   padding: 1rem;
   border-top: 1px solid #222222;
   border-bottom: 1px solid #222222;
