@@ -1,0 +1,42 @@
+[
+  {
+    "id": "1201A256-025",
+    "productImg": "shoe",
+    "productBrand": "아식스",
+    "productName_ko": "젤-1130-오이스터 그레이:클레이 그레이",
+    "productPrice": 109000,
+    "like": 3170
+  },
+  {
+    "id": "IT2491",
+    "productImg": "adidas",
+    "productBrand": "아디다스",
+    "productName_ko": "우븐 파이어버드 트랙탑 - 블랙",
+    "productPrice": 105900,
+    "like": 6403
+  },
+  {
+    "id": "NM2DP51A",
+    "productImg": "bag",
+    "productBrand": "노스페이스",
+    "productName_ko": "빅샷",
+    "productPrice": 135000,
+    "like": 73156
+  },
+  {
+    "id": "MOO_24S/S",
+    "productImg": "mantoman",
+    "productBrand": "MOO",
+    "productName_ko": "[기모/논기모] 피치스킨 디스코 그래픽 맨투맨 - 블랙",
+    "productPrice": 41900,
+    "like": 2623
+  },
+  {
+    "id": "2395556",
+    "productImg": "glass",
+    "productBrand": "BLUE ELEPHANT",
+    "productName_ko": "ZENTA black",
+    "productPrice": 44900,
+    "like": 556
+  }
+]
