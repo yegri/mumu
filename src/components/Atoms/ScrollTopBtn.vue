@@ -1,5 +1,5 @@
 <template>
-  <div @click="goTop" class="scrollTop" v-show="isScrollDown">
+  <div @click="goTop" class="scrollTop" :class="{ btnShow: isScrollDown }">
     <img
       src="@/assets/images/icons/up-arrow.png"
       alt="top버튼"
@@ -55,10 +55,16 @@ export default {
   top: calc(90% - 100px);
   right: 22px;
   z-index: 100;
+  opacity: 0;
+  transition: all 0.3s;
 
   .topBtn {
     background-color: #fff;
     border-radius: 50%;
   }
+}
+
+.btnShow {
+  opacity: 1;
 }
 </style>

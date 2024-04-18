@@ -76,7 +76,7 @@ export default {
   border-top: 1px solid #fff;
   z-index: 1000;
   transition: all 0.5s;
-  transform: translateY(-15px);
+  transform: translateY(-12px);
 
   ul {
     li {
