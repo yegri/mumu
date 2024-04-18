@@ -2,6 +2,8 @@
   <div class="home" ref="parent">
     <Header />
     <MainBanner />
+
+    <Category :parentHeight="parentHeight" />
     <MainList />
     <Footer />
 
@@ -17,11 +19,20 @@ import MainBanner from "@/components/Templates/MainBanner.vue";
 import MainList from "@/components/Templates/MainList.vue";
 import Header from "@/components/Shared/Header.vue";
 import Footer from "@/components/Shared/Footer.vue";
-import ScrollTopBtn from "@/components/Atoms/ScrollTopBtn";
+import ScrollTopBtn from "@/components/Atoms/ScrollTopBtn.vue";
+import Category from "@/components/Shared/Category.vue";
 import Nav from "@/components/Shared/Nav.vue";
 
 export default {
-  components: { Header, Footer, MainBanner, MainList, ScrollTopBtn, Nav },
+  components: {
+    Header,
+    Footer,
+    MainBanner,
+    MainList,
+    ScrollTopBtn,
+    Nav,
+    Category,
+  },
   data() {
     return {
       nowScrollY: 0,
