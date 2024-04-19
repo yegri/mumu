@@ -14,7 +14,7 @@ export default {
   data() {
     return {
       nowScrollY: 0,
-      isScrollDown: false, // v-show를 통해 맨위로 버튼을 등장시키는 변수
+      isScrollDown: false,
     };
   },
 
@@ -61,6 +61,7 @@ export default {
   .topBtn {
     background-color: #fff;
     border-radius: 50%;
+    cursor: pointer;
   }
 }
 

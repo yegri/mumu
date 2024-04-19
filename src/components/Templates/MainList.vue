@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>상품 목록 (총 {{ product.length }}개)</h2>
-    <List :data="product" />
+    <List :data="product" :categoryType="categoryType" />
   </div>
 </template>
 
@@ -12,6 +12,7 @@ const product = dummy;
 
 export default {
   components: { List },
+  props: ["categoryType"],
   data() {
     return {
       product,

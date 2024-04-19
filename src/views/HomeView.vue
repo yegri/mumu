@@ -1,16 +1,24 @@
 <template>
   <div class="home" ref="parent">
+    <!-- 헤더 -->
     <Header />
+
+    <!-- 배너 -->
     <MainBanner />
 
     <!-- 카테고리 -->
-    <Category />
+    <Category :categoryType="categoryType" @setCategory="setCategory" />
 
-    <MainList />
+    <!-- 상품 리스트 -->
+    <MainList :categoryType="categoryType" />
+
+    <!-- 푸터 -->
     <Footer />
 
     <!-- Top 버튼 -->
     <ScrollTopBtn />
+
+    <!-- 하단 nav -->
     <Nav />
   </div>
 </template>
@@ -36,7 +44,15 @@ export default {
     Category,
   },
   data() {
-    return {};
+    return {
+      categoryType: "all",
+    };
+  },
+
+  methods: {
+    setCategory(value) {
+      this.categoryType = value;
+    },
   },
 };
 </script>

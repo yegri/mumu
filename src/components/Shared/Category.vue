@@ -2,11 +2,12 @@
   <!-- isScrollDown이 true일 때 categoryTop 클래스 적용 -->
   <nav class="categoryWrap" :class="{ categoryTop: isScrollDown }">
     <ul>
-      <li><router-link to="/">아우터</router-link></li>
-      <li><router-link to="/">상의</router-link></li>
-      <li><router-link to="/">신발</router-link></li>
-      <li><router-link to="/">가방</router-link></li>
-      <li><router-link to="/">잡화</router-link></li>
+      <li @click="$emit('setCategory', 'all')">전체</li>
+      <li @click="$emit('setCategory', 'outwear')">아우터</li>
+      <li @click="$emit('setCategory', 'top')">상의</li>
+      <li @click="$emit('setCategory', 'footwear')">신발</li>
+      <li @click="$emit('setCategory', 'bags')">가방</li>
+      <li @click="$emit('setCategory', 'stuff')">잡화</li>
     </ul>
   </nav>
 </template>
@@ -14,16 +15,17 @@
 <script>
 export default {
   name: "Category",
+  props: ["categoryType"],
   data() {
     return {
       nowScrollY: 0,
       isScrollDown: false,
-      nav: "",
       navTop: 0,
     };
   },
 
   methods: {
+    // 스크롤 이벤트
     windowScrollY() {
       this.nowScrollY = window.scrollY;
 
@@ -61,10 +63,7 @@ export default {
       margin-right: 1.5rem;
       font-weight: 900;
       font-size: 1.1rem;
-
-      a {
-        display: block;
-      }
+      cursor: pointer;
     }
   }
 }
@@ -80,9 +79,7 @@ export default {
 
   ul {
     li {
-      a {
-        color: #fff;
-      }
+      color: #fff;
     }
   }
 }
