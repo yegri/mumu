@@ -2,7 +2,7 @@
   <div class="loginWrap">
     <h1 class="title">로그인</h1>
 
-    <div class="form">
+    <form class="form">
       <div class="inputBox">
         <label for="id">아이디</label>
         <input
@@ -24,8 +24,10 @@
         />
       </div>
 
-      <button class="loginBtn" @click="loginSubmit">로그인</button>
-    </div>
+      <button type="button" class="loginBtn" @click="loginSubmit">
+        로그인
+      </button>
+    </form>
   </div>
 </template>
 
@@ -44,17 +46,8 @@ export default {
       loginData.userId = this.userId;
       loginData.userPassword = this.userPassword;
 
-      localStorage.setItem("id", JSON.stringify(loginData));
-
-      this.loginAuth();
-    },
-    loginAuth() {
-      const loginUserData = JSON.parse(localStorage.getItem("id"));
-
-      if (
-        loginUserData.userId === "test" &&
-        loginUserData.userPassword === "test"
-      ) {
+      if (this.userId === "test" && this.userPassword === "test") {
+        localStorage.setItem("id", JSON.stringify(loginData));
         alert("로그인이 완료되었습니다.");
         window.location.replace("/");
       } else {
