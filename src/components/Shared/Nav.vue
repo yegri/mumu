@@ -19,7 +19,7 @@
     </div>
 
     <div class="item">
-      <router-link to="/mypage"
+      <router-link to="/login"
         ><i class="fa fa-user" aria-hidden="true"></i>MY</router-link
       >
     </div>

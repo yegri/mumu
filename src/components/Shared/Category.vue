@@ -2,12 +2,12 @@
   <!-- isScrollDown이 true일 때 categoryTop 클래스 적용 -->
   <nav class="categoryWrap" :class="{ categoryTop: isScrollDown }">
     <ul>
-      <li @click="$emit('setCategory', 'all')">전체</li>
-      <li @click="$emit('setCategory', 'outwear')">아우터</li>
-      <li @click="$emit('setCategory', 'top')">상의</li>
-      <li @click="$emit('setCategory', 'footwear')">신발</li>
-      <li @click="$emit('setCategory', 'bags')">가방</li>
-      <li @click="$emit('setCategory', 'stuff')">잡화</li>
+      <li @click="$emit('setCategory', 'all')"><button>전체</button></li>
+      <li @click="$emit('setCategory', 'outwear')"><button>아우터</button></li>
+      <li @click="$emit('setCategory', 'top')"><button>상의</button></li>
+      <li @click="$emit('setCategory', 'footwear')"><button>신발</button></li>
+      <li @click="$emit('setCategory', 'bags')"><button>가방</button></li>
+      <li @click="$emit('setCategory', 'stuff')"><button>잡화</button></li>
     </ul>
   </nav>
 </template>
@@ -60,10 +60,14 @@ export default {
     display: flex;
 
     li {
-      margin-right: 1.5rem;
-      font-weight: 900;
-      font-size: 1.1rem;
-      cursor: pointer;
+      button {
+        margin-right: 1.5rem;
+        font-weight: 900;
+        font-size: 1.1rem;
+      }
+      button:hover {
+        color: #555;
+      }
     }
   }
 }
@@ -79,7 +83,9 @@ export default {
 
   ul {
     li {
-      color: #fff;
+      button {
+        color: #fff;
+      }
     }
   }
 }

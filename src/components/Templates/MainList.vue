@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>상품 목록 (총 {{ product.length }}개)</h2>
+    <h2>상품 목록</h2>
     <List :data="product" :categoryType="categoryType" />
   </div>
 </template>
