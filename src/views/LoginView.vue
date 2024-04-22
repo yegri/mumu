@@ -33,27 +33,25 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
 export default {
   data() {
     return {
       userId: "",
       userPassword: "",
+      isLogin: false,
     };
   },
 
   methods: {
+    ...mapActions(["login"]), // 수정: login 액션을 컴포넌트 메서드로 매핑
     loginSubmit() {
-      const loginData = {};
-      loginData.userId = this.userId;
-      loginData.userPassword = this.userPassword;
-
-      if (loginData.userId === "test" && loginData.userPassword === "test") {
-        localStorage.setItem("id", JSON.stringify(loginData));
-        alert("로그인이 완료되었습니다.");
-        window.location.replace("/");
-      } else {
-        alert("아이디 또는 패스워드가 틀립니다. 다시 시도해주세요.");
-      }
+      const loginData = {
+        userId: this.userId,
+        userPassword: this.userPassword,
+        isLogin: this.isLogin,
+      };
+      this.login(loginData); // 수정: mapActions를 통해 login 액션을 호출
     },
   },
 };
