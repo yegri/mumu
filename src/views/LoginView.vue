@@ -21,6 +21,7 @@
           v-model="userPassword"
           placeholder="비밀번호를 입력해주세요"
           required
+          @keyup.enter="loginSubmit"
         />
       </div>
 
@@ -46,7 +47,7 @@ export default {
       loginData.userId = this.userId;
       loginData.userPassword = this.userPassword;
 
-      if (this.userId === "test" && this.userPassword === "test") {
+      if (loginData.userId === "test" && loginData.userPassword === "test") {
         localStorage.setItem("id", JSON.stringify(loginData));
         alert("로그인이 완료되었습니다.");
         window.location.replace("/");

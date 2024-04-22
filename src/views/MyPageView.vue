@@ -20,6 +20,10 @@
 
       <button type="button" class="editBtn">정보 수정</button>
     </form>
+
+    <section class="logoutBox">
+      <button type="button" @click="onLogout">로그아웃</button>
+    </section>
   </div>
 </template>
 
@@ -31,6 +35,16 @@ export default {
     };
   },
 
+  methods: {
+    onLogout() {
+      localStorage.removeItem("id");
+      alert("로그아웃 되었습니다.");
+      window.location.replace("/");
+    },
+  },
+
+  // data와 events가 활성화되어 접근 가능
+  // 컴포넌트 초기에 세팅되어야할 데이터 패치는 이 단계에서 사용
   created() {
     const getUserData = localStorage.getItem("id");
 
@@ -91,6 +105,16 @@ export default {
       margin-top: 2rem;
       border-radius: 7px;
       font-size: 1.1rem;
+    }
+  }
+
+  .logoutBox {
+    button {
+      font-size: 1.1rem;
+    }
+
+    button:hover {
+      text-decoration: underline;
     }
   }
 }

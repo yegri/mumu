@@ -13,37 +13,26 @@ const routes = [
   {
     path: "/login",
     name: "login",
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/LoginView.vue"),
+    component: () => import("../views/LoginView.vue"),
   },
   {
     path: "/menu",
     name: "menu",
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/MenuView.vue"),
+    component: () => import("../views/MenuView.vue"),
   },
   {
     path: "/order",
     name: "order",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/OrderView.vue"),
+    component: () => import("../views/OrderView.vue"),
   },
   {
     path: "/mypage",
     name: "mypage",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/MyPageView.vue"),
-
+    component: () => import("../views/MyPageView.vue"),
     beforeEnter: function (to, from, next) {
       const getUserData = localStorage.getItem("id");
 
-      // 값이 없는 경우 null이 반환 -> 값이 없을 때는 공백을 넣어서 null이 되지 않도록 설정
+      // 값이 없는 경우 null이 반환됨 -> 값이 없을 때는 공백을 넣어서 null이 되지 않도록 설정
       const loginUserData = getUserData ? JSON.parse(getUserData) : "";
 
       if (!loginUserData) {

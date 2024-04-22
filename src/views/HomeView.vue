@@ -16,7 +16,6 @@
 import MainBanner from "@/components/Templates/MainBanner.vue";
 import MainList from "@/components/Templates/MainList.vue";
 import Category from "@/components/Shared/Category.vue";
-import Nav from "@/components/Shared/Nav.vue";
 
 export default {
   components: {
